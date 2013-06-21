@@ -1,7 +1,6 @@
-FISH600 stock assessment simulation study
-===============================================
+# FISH 600 #
 
-
+### A stock assessment simulation study ###
 
 This repository serves the **FISH 600** Stock Assessment Research Team from the [School of Aquatic and Fishery Sciences](http://fish.washington.edu/) (SAFS) at The University of Washington. The FISH600 team is conducting a large-scale simulation estimation study aligned with the aims of the [World Conference on Stock Assessment Methods 2013](http://www.ices.dk/news-and-events/symposia/WCSAM-2013/Pages/default.aspx) (WCSAM) workshop and simulation program. The team has built operating and stock assessment models using [Stock Synthesis](http://nft.nefsc.noaa.gov/SS3.html) (SS) to represent cod-like, flatfish-like, and sardine-like fisheries, and is using those models to investigate questions that relate directly to the 'grand questions' proposed by the WCSAM organisers.
 
