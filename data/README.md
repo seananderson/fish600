@@ -1,2 +1,3 @@
-This folder contains data from the simulation analyses. Once added it should
-be treated as read-only and used by the various project groups.
+This folder contains data from the simulation analyses. Once added, data in
+this folder should be treated as read-only and used by the various project
+group.
