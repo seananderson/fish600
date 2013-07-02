@@ -24,7 +24,7 @@ The first paper serves as an overview of the study as a whole, the second descri
 **Corresponding author:** Athol Whitten
 
 <!--Sean: It seems a bit strange to me how we refer to plural papers as "this study"-->
-This study explored the performance of a widely used statistical catch-at-age (SCAA) stock assessment framework (Stock Synthesis, SS) in relation to several of the 'grand questions' of the *ICES World Conference on Stock Assessment Modelling 2013*. 
+This study explored the performance of a widely-used statistical catch-at-age (SCAA) stock assessment framework (Stock Synthesis, SS) in relation to several of the 'grand questions' of the *ICES World Conference on Stock Assessment Modelling 2013*. 
 We used SS to generate pseudo-data and estimate management quantities, and evaluated the ability of SS to estimate spawning stock biomass, stock status, and fishery reference points under a range of scenarios for three hypothetical fish species. 
 In the first part of our study, we used Monte Carlo simulation to evaluate the ability of SS to estimate key quantities when the 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. 
 Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. 
