@@ -37,11 +37,31 @@ In those cases where retrospective patterns were observed, we assessed the utili
 This report provides an overview of our simulation study as a whole: Important lessons learned apply broadly to simulation testing of stock assessment models and may provide valuable information about how to conduct such studies in the future.
 <!--Sean: I wonder if this summary should focus more on the "lessons learned" part. I.e. the part that distinguishes it from the other papers.-->
 
-### ss3sim: An R package for stock assessment simulation using Stock Synthesis
+### `ss3sim`: An R package for stock-assessment simulation with Stock Synthesis
 
 **Corresponding author:** Sean Anderson
 
+Stock-assessment simulation is a critical component to evaluating stock assessment methods and understanding their strengths and weaknesses.
+However, there are many complications to conducting large-scale reproducible simulation analyses. 
+<!--These complications can  that can create a barrier to entry for fisheries researchers...-->
+<!--And/or introduce that nothing marries R and SS, increasingly the standards of their fields.-->
+In this paper we will introduce `ss3sim`, a software package for the statistical programming language `R` that facilitates large-scale and reproducible stock-assessment simulation with the widely-used Stock Synthesis (`SS`) software.
+`ss3sim` is built around three types of functions:
+(1) Functions that manipulate SS configuration files. These manipulations generate an underlying "truth" (operating models) and control our assessment of the those models (estimation models).
+(2) Functions that conduct simulations. These functions generate a folder structure, call manipulation functions, run the SS software as needed, and save the output.
+(3) Functions for analyzing and plotting simulation output.
+We highlight two levels of functions in the package. First, we focus on general low-level `ss3sim` functions that provide flexible tools for simulation researchers. Second, as an example of a framework that integrates these functions into a complete stock-assessment simulation, we describe the higher-level functions that facilitated the three analyses described in this document.
+To demonstrate how a researcher can conduct a stock-assessment simulation with `ss3sim`, we work through a brief example starting at a research question and ending with plots of the output.
+Our example includes considerations for setting up operating and estimation models, choosing a folder structure, model testing, and output manipulation and plotting.
+We conclude by discussing how `ss3sim` compares to and complements other stock simulation software packages and outlining examples of research questions that our accessible and general `SS` simulation framework could address.
 
+<!--The big plus to ss3sim is that it is a complete stock-assessment simulation framework based around from the programming language R, which is becoming the standard for data manipulation, statistical analysis, and data visualization.-->
+<!--Further ss3sim uses the powerful and increasingly used Stock Synthesis 3 software as a backend.-->
+<!--The understanding we can gain from simulation studies often increases by comparing across a multitude of methods and types of fisheries.-->
+<!--value of stock-assessment simulation, but complications, and issues of reproducibility-->
+<!--what is SS, why SS, pervasiveness of SS-->
+<!--general philosophy of ss3sim-->
+<!--problems of setting up stock assessment simulation in general-->
 
 
 ### Time-varying natural mortality in fisheries stock assessment models: Identifying a default approach ###
