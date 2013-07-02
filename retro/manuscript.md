@@ -1,6 +1,7 @@
-% Lessons learned from a large-scale stock assessment simulation study
-% Athol R. Whitten; Author2; Author3; Etc.
+% Looking in the rear-view mirror: Reflections on bias and retrospective patterns from a fisheries stock assessment simulation study
+% Felipe Hurtado Ferro; Author2; Author3; Etc.
 %
 
 # Introduction
 
+# References

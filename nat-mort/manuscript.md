@@ -1,6 +1,8 @@
-% Lessons learned from a large-scale stock assessment simulation study
-% Athol R. Whitten; Author2; Author3; Etc.
+% Time-varying natural mortality in fisheries stock assessment models: Identifying a default approach
+% Kelli Johnson; Author2; Author3; Etc.
 %
 
 # Introduction
+
+# References
 
