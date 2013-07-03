@@ -1,6 +1,8 @@
-% Lessons learned from a large-scale stock assessment simulation study
-% Athol R. Whitten; Author2; Author3; Etc.
+% Better data yield better yields: Why the type, quantity, and quality of data matters in fisheries stock assessments
+% Kotaro Ono; Author2; Author3; Etc.
 %
 
 # Introduction
+
+# References
 
