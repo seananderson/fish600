@@ -1,17 +1,17 @@
 % n lessons for conducting stock assessment simulation studies
 % Athol R. Whitten^1^
- Sean C. Anderson^2^
- Cole Monnahan
- Curry Cunningham
- Felipe Hurtado Ferro
- Kelli Johnson
- Roberto Licandeo
- Carey McGilliard
- Melissa Muradian
- Kotaro Ono
- Cody Szuwalksi
- Juan Valero
- Katyana Vertpre
+  Sean C. Anderson^2^
+  Cole Monnahan
+  Curry Cunningham
+  Felipe Hurtado Ferro
+  Kelli Johnson
+  Roberto Licandeo
+  Carey McGilliard
+  Melissa Muradian
+  Kotaro Ono
+  Cody Szuwalksi
+  Juan Valero
+  Katyana Vertpre
 % 
 
 ^1^School of Aquatic and Fishery Sciences, University of Washington, Box 355020, Seattle, WA 98195-5020, USA
@@ -47,7 +47,7 @@ In this paper, we review a series of lessons that we learned through these studi
 ## 1. Choose widely-used and current assessment models ##
 Stock assessment simulation studies are most relevant to research and management if they focus on the models and tools that are used in practice.  In our studies we chose to focus on SS, which is a widely used integrated-assessment modelling framework, now used in all assessments on the West Coast of the United States. In other regions commonly used model frameworks will be different.
 
-When researchers are interested in multiple  modelling frameworks they may choose between (1) conducting a study where both the OM and EM are based on the same modelling framework to better understand issues related to model specification or (2) conducting a study where the OM and EM are based on different modelling frameworks to investigate the impact of multiple-choice uncertainty. Frequently model-choice uncertainty may dwarf other sources of uncertainty (REF).
+When researchers are interested in multiple modelling frameworks they may choose between (1) conducting a study where both the OM and EM are based on the same modelling framework to better understand issues related to model specification or (2) conducting a study where the OM and EM are based on different modelling frameworks to investigate the impact of model-choice uncertainty. Frequently model-choice uncertainty may dwarf other sources of uncertainty (REF).
 
 
 ## 2. Condition the operating model carefully ##
