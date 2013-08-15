@@ -1,5 +1,17 @@
 % n lessons for conducting stock assessment simulation studies
-% Athol R. Whitten^1^, Sean C. Anderson^2^, Cole Monnahan, Curry Cunningham, Felipe Hurtado Ferro, Kelli Johnson, Roberto Licandeo, Carey McGilliard, Melissa Muradian, Kotaro Ono, Cody Szuwalksi, Juan Valero, and Katyana Vertpre
+% Athol R. Whitten^1^
+ Sean C. Anderson^2^
+ Cole Monnahan
+ Curry Cunningham
+ Felipe Hurtado Ferro
+ Kelli Johnson
+ Roberto Licandeo
+ Carey McGilliard
+ Melissa Muradian
+ Kotaro Ono
+ Cody Szuwalksi
+ Juan Valero
+ Katyana Vertpre
 % 
 
 ^1^School of Aquatic and Fishery Sciences, University of Washington, Box 355020, Seattle, WA 98195-5020, USA
@@ -50,7 +62,7 @@ Reproducible and transparent simulation studies are critical to the authenticity
 ## 5. Make your framework flexible ##
 A stock assessments and innovation framework is most useful if it is flexible for the current users as well as for future users who may develop scientific questions with the framework that the original users never considered. One way researchers can make their framework flexible is to build their code around smaller functions that can be mixed and matched at will. Another key element is keeping the input and output files in formats that can be read and process multiple tools (e.g. comma-separated, or tab-delimited text files). Finally, researchers may consider splitting scenarios into different cases so that cases can need mixed and matched into scenarios. For example, a scenario might be comprised of a combination of cases for the M trajectory, F trajectory, and selectivity patterns.  If these cases are specified in individual text control files then they can be flexibly combined without duplicating case specification.
 
-## 6. Check your models early and often ##
+## 6. Check your models early and often ##
 The complexity of conducting stock assessment simulations means that the chance of making mistake is high, and our ability to make sense of complicated model output can be limited. Deterministic model checking is therefore vital. To check a model deterministically we can reduce or eliminate process and observation error and check for bias between the OM and EM models. This might mean running the stock assessment simulation with minimal stock-recruit deviations and minimal observation error on survey indices.
 
 An important component model checking is graphical model checking. Many complex problems are unlikely to be detected without graphical model checking (REFs, maybe Gelman). To facilitate model checking these graphics should be rapid and easy to produce. We found the visualization packages `manipulator`, `shiny`, and `ggplot2` to be helpful for this purpose.
@@ -65,3 +77,5 @@ Other thoughts: keep folder structure as simple as possible; keep all output; wr
 
 - perhaps suggest the kinds of questions that this approach could answer and other steps forward
 - ...?
+
+# References #
