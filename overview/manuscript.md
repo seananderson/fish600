@@ -1,22 +1,26 @@
-% n lessons for conducting stock assessment simulation studies
+% Lessons learned from large-scale stock assessment simulation studies
+
 % Athol R. Whitten^1^
   Sean C. Anderson^2^
-  Cole Monnahan
-  Curry Cunningham
-  Felipe Hurtado Ferro
-  Kelli Johnson
-  Roberto Licandeo
-  Carey McGilliard
-  Melissa Muradian
-  Kotaro Ono
-  Cody Szuwalksi
-  Juan Valero
-  Katyana Vertpre
-% 
+  Cole Monnahan^1^
+  Curry Cunningham^1^
+  Felipe Hurtado Ferro^1^
+  Kelli Johnson^1^
+  Roberto Licandeo^1^
+  Carey McGilliard^1^
+  Melissa Muradian^1^
+  Kotaro Ono^1^
+  Cody Szuwalksi^1^
+  Juan Valero^4^
+  Katyana Vertpre^1^
+
+% August 2013
 
 ^1^School of Aquatic and Fishery Sciences, University of Washington, Box 355020, Seattle, WA 98195-5020, USA
-
 ^2^Department of Biological Sciences, Simon Fraser University, Burnaby BC, V5A 1S6, Canada
+^3^Resource Ecology and Fisheries Management Division, Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration,
+National Marine Fisheries Service, 7600 Sand Point Way NE, Seattle, WA 98115, USA
+^4^Center for the Advancement of Population Assessment Methodology, Scripps Institution of Oceanography, La Jolla, USA
 
 # Abstract #
 
