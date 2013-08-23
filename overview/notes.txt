@@ -1,0 +1,7 @@
+Model papers:
+
+Nine simple ways to make it easier to (re)use your data:\
+https://peerj.com/preprints/7/
+
+Ten Simple Rules for the Open Development of Scientific Software:\
+http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002802

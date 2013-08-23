@@ -1,4 +1,4 @@
-% Lessons learned from large-scale stock assessment simulation studies
+% Understanding stock assessment models using simulation
 
 % Athol R. Whitten^1^
   Sean C. Anderson^2^
@@ -24,44 +24,33 @@ National Marine Fisheries Service, 7600 Sand Point Way NE, Seattle, WA 98115, US
 
 # Abstract #
 
-Start with a general introduction similar to what we've got now. Include a schematic representation of all the steps to a stock assessment simulation. Follow with lessons/rules. Each 'rule' would need some shorter header. Then 1-3 paragraphs per rule. Finish with a brief discussion/conclusion.
+Stock assessment simulation studies are critical to evaluating stock assessment methods and understanding their strengths and weaknesses. 
+This paper briefly summarises past stock assessment simulation studies and describes steps necessary to conduct efficient and effective simulations using contemporay fisheries stock assessment methods. This paper also describes key outcomes of a large-scale stock assessment simulation project and discusses important lessons learned from it.
 
-Model papers:
+<!-- Start with a general introduction similar to what we've got now. Include a schematic representation of the steps required to conduct a stock assessment simulation. Follow with lessons/rules. Each 'rule' would need some shorter header. Then 1-3 paragraphs per rule. Finish with a brief discussion/conclusion. -->
 
-Nine simple ways to make it easier to (re)use your data:\
-https://peerj.com/preprints/7/
-
-Ten Simple Rules for the Open Development of Scientific Software:\
-http://www.ploscompbiol.org/article/info%3Adoi%2F10.1371%2Fjournal.pcbi.1002802
 
 # Introduction #
 
-Stock-assessment simulation is a critical component to evaluating stock assessment methods and understanding their strengths and weaknesses. 
-It is important because it lets us test our assessments on known truths, possible truths we are interested in, and to match (or mismatch) truths and assessment model assumptions. 
-References: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee).
+Stock-assessment simulation is key to evaluating stock assessment methods and understanding their strengths and weaknesses. Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assessment model assumptions. 
 
-We can divide a stock assessment simulation into four components (Fig. 1). 
-(1) The *conditioning model* is used to ground a stock assessment simulation in some plausible reality. 
-A stock assessment simulation could be conditioned on a specific region and fish stock or it could be conditioned on some generic representation. 
-(2) The *operating model (OM)* represents all the conditions that underly the true state of nature. 
-An operating model might specify, for example, that natural mortality (M) varies with some random walk. 
-(3) We then *sample from the OM* output to generate fisheries pseudo-data with observation error. 
-(4) Finally, we run a stock assessment *estimation model (EM)* on the pseudo-data to find out how our model would assess the scenario. 
-Steps 2 to 4 are then usually repeated across iterations, adding re-sampled process error and observation error each time, and blocks of iterations are repeated across scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. 
-This process differs from a management strategy evaluation (MSE) in that a MSE closes the loop — introducing management decision rules about how to act on stock assessment output that affect subsequent OM years.  
-Stock assessment simulation can therefore focus on the mechanics and performance of the stock assessment models themselves.
+<!-- And more with Reference to: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee). -->
 
-We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. 
-These studies are featured in this issue: 
+An effective stock assessment simulation requires four key components (Fig. 1):
 
-- Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. 
-Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. 
-- Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. 
-They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. 
-- Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. 
-Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. 
-They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. 
-In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. 
+1. A *conditioning model* is used to ground a stock assessment simulation to some plausible reality. A stock assessment simulation may be conditioned on a specific region and/or fish stock or on some generic representation of a fishery based on expert opinion or the published literature.
+
+2. An *operating model* represents a range of conditions that underly the believed true state of nature. An operating model might specify, for example, that natural mortality (M) varies through time with some random walk, or that it is constant through time.
+
+3. *Pseudo-data* is sampled from an operating model with simulated observaton error in a manner that is representative of the fishery of interest. 
+
+4. A stock assessment *estimation model* is fit to the pseudo-data. This determines the ability of the methods of interest to estimate the paramters specified in the operating model and to assess the scenario or 'status' of the simulated stock.
+
+Steps 2 to 4 are usually repeated across iterations, adding re-sampled process error and observation error each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluation (MSE) in that MSE 'closes the loop' — introducing management decision rules about how to act on stock assessment output that affect subsequent realistations of operating model  years. Stock assessment simulation is intended to examine the mechanics and performance of the stock assessment models themselves.
+
+We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. These studies are featured in this issue: 
+
+Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. 
 
 In this paper, we review a series of lessons that we learned through these studies about conducting large-scale, relevant, and rapid stock assessment simulation studies...
 
