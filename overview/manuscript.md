@@ -1,26 +1,32 @@
-% Understanding stock assessment models using simulation
+% Understanding stock assessment modeling through simulation studies
 
-% Athol R. Whitten^1^
-  Sean C. Anderson^2^
-  Cole Monnahan^1^
-  Curry Cunningham^1^
-  Felipe Hurtado Ferro^1^
-  Kelli Johnson^1^
-  Roberto Licandeo^1^
-  Carey McGilliard^1^
-  Melissa Muradian^1^
-  Kotaro Ono^1^
-  Cody Szuwalksi^1^
-  Juan Valero^4^
-  Katyana Vertpre^1^
-
-% August 2013
+Athol R. Whitten^1*^
+Sean C. Anderson^2^
+Curry Cunningham^1^
+Felipe Hurtado Ferro^1^
+Kelli Johnson^1^
+Roberto Licandeo^1^
+Carey McGilliard^1^
+Cole Monnahan^1^
+Melissa Muradian^1^
+Kotaro Ono^1^
+Cody Szuwalksi^1^
+Juan Valero^4^
+Katyana Vertpre^1^
 
 ^1^School of Aquatic and Fishery Sciences, University of Washington, Box 355020, Seattle, WA 98195-5020, USA
 ^2^Department of Biological Sciences, Simon Fraser University, Burnaby BC, V5A 1S6, Canada
 ^3^Resource Ecology and Fisheries Management Division, Alaska Fisheries Science Center, National Oceanic and Atmospheric Administration,
 National Marine Fisheries Service, 7600 Sand Point Way NE, Seattle, WA 98115, USA
 ^4^Center for the Advancement of Population Assessment Methodology, Scripps Institution of Oceanography, La Jolla, USA
+
+*Corresponding author
+
+\setlength{\topmargin}{0.3in}
+\setlength{\parindent}{0.1in}
+\setlength{\parskip}{0.2in}
+\clearpage
+
 
 # Abstract #
 
@@ -32,9 +38,15 @@ This paper briefly summarises past stock assessment simulation studies and descr
 
 # Introduction #
 
-Stock-assessment simulation is key to evaluating stock assessment methods and understanding their strengths and weaknesses. Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assessment model assumptions. 
+Stock assessment simulation is key to evaluating stock assessment methods and understanding their strengths and weaknesses. Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assessment model assumptions. 
 
 <!-- And more with Reference to: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee). -->
+
+# Stock assessment studies in practice #
+
+<!-- Examples from the literature --> 
+
+# Key components of effective simulation studies #
 
 An effective stock assessment simulation requires four key components (Fig. 1):
 
@@ -46,7 +58,7 @@ An effective stock assessment simulation requires four key components (Fig. 1):
 
 4. A stock assessment *estimation model* is fit to the pseudo-data. This determines the ability of the methods of interest to estimate the paramters specified in the operating model and to assess the scenario or 'status' of the simulated stock.
 
-Steps 2 to 4 are usually repeated across iterations, adding re-sampled process error and observation error each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluation (MSE) in that MSE 'closes the loop' — introducing management decision rules about how to act on stock assessment output that affect subsequent realistations of operating model  years. Stock assessment simulation is intended to examine the mechanics and performance of the stock assessment models themselves.
+Steps 2 to 4 are usually repeated across iterations, adding re-sampled process error and observation error each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluation (MSE) in that MSE 'closes the loop' — introducing management decision rules about how to act on stock assessment output that affect subsequent realistations of operating model years. Stock assessment simulation on the other hand is intended to examine the mechanics and performance of stock assessment models themselves: It (insert insightful benefit of SAS modelling here).
 
 We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. These studies are featured in this issue: 
 
