@@ -1,4 +1,4 @@
-% Understanding stock assessment modeling through simulation studies
+% Simple rules for conducting simulation studies of statistical fisheries stock assessment models
 
 Athol R. Whitten^1*^
 Sean C. Anderson^2^
@@ -30,8 +30,7 @@ National Marine Fisheries Service, 7600 Sand Point Way NE, Seattle, WA 98115, US
 
 # Abstract #
 
-Stock assessment simulation studies are critical to evaluating stock assessment methods and understanding their strengths and weaknesses. 
-This paper briefly summarises past stock assessment simulation studies and describes steps necessary to conduct efficient and effective simulations using contemporay fisheries stock assessment methods. This paper also describes key outcomes of a large-scale stock assessment simulation project and discusses important lessons learned from it.
+Stock assessment simulation studies are critical to evaluating stock assessment methods and understanding their strengths and weaknesses. This paper briefly summarises past stock assessment simulation studies and describes steps necessary to conduct efficient and effective simulations using contemporay fisheries stock assessment methods. This paper also describes key outcomes of a large-scale stock assessment simulation project and discusses important lessons learned from it.
 
 <!-- Start with a general introduction similar to what we've got now. Include a schematic representation of the steps required to conduct a stock assessment simulation. Follow with lessons/rules. Each 'rule' would need some shorter header. Then 1-3 paragraphs per rule. Finish with a brief discussion/conclusion. -->
 
@@ -42,70 +41,60 @@ Stock assessment simulation is key to evaluating stock assessment methods and un
 
 <!-- And more with Reference to: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee). -->
 
+In this paper, we outline the necessary components for conducting stock assessment simulations and share simple rules and key lessons learned whilst conducting a series of large-scale and rapid stock assessment simulation studies. The ideas and insights presented herein also come from dicsussions with colleagues and from published articles about stock assessment simulation.
+
+
+
 # Stock assessment studies in practice #
 
 <!-- Examples from the literature --> 
+
+
 
 # Key components of effective simulation studies #
 
 An effective stock assessment simulation requires four key components (Fig. 1):
 
-1. A *conditioning model* is used to ground a stock assessment simulation to some plausible reality. A stock assessment simulation may be conditioned on a specific region and/or fish stock or on some generic representation of a fishery based on expert opinion or the published literature.
+1. A **conditioning model** is used to ground a stock assessment simulation to some plausible reality. A stock assessment simulation may be conditioned on a specific region and/or fish stock or on some generic representation of a fishery based on published literature, stock assessment reports, or expert opinion.
 
-2. An *operating model* represents a range of conditions that underly the believed true state of nature. An operating model might specify, for example, that natural mortality (M) varies through time with some random walk, or that it is constant through time.
+2. An **operating model** represents a range of conditions believed to underly the dynamics of a fish stock and fishery: It describes an assumed true state of nature, and true state of play. An operating model might specify, for example, that fish natural mortality  rates vary through time with some random walk, or that it is constant through time. It might also specify that fish are or some particular age are caught by one fishing fleet but not another, i.e. that different fleets exhibit different fishing selectivity.
 
-3. *Pseudo-data* is sampled from an operating model with simulated observaton error in a manner that is representative of the fishery of interest. 
+3. *Pseudo-data* is sampled from an operating model with simulated observaton error in a manner that is representative of a fishing fleet or survey program of interest. 
 
 4. A stock assessment *estimation model* is fit to the pseudo-data. This determines the ability of the methods of interest to estimate the paramters specified in the operating model and to assess the scenario or 'status' of the simulated stock.
 
 Steps 2 to 4 are usually repeated across iterations, adding re-sampled process error and observation error each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluation (MSE) in that MSE 'closes the loop' — introducing management decision rules about how to act on stock assessment output that affect subsequent realistations of operating model years. Stock assessment simulation on the other hand is intended to examine the mechanics and performance of stock assessment models themselves: It (insert insightful benefit of SAS modelling here).
 
-We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. These studies are featured in this issue: 
 
-Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. 
 
-In this paper, we review a series of lessons that we learned through these studies about conducting large-scale, relevant, and rapid stock assessment simulation studies...
+# Simple rules for stock assessment simulation studies #
+
+Stock assessment simulation studies should be conducted with three 'Rs' in mind: relevance, realism, and reproducability. Though relevance will ultimately be determined by whether results and recommendations eminating from a study are are read and cited in future work, it is important than any simulation study ensure relevance to current trends and 
 
 ## 1. Choose widely-used and current assessment models ##
-Stock assessment simulation studies are most relevant to research and management if they focus on the models and tools that are used in practice.  
-In our studies we chose to focus on SS, which is a widely used integrated-assessment modelling framework, now used in all assessments on the West Coast of the United States (REF). 
-In other regions commonly used model frameworks will be different.
+Stock assessment simulation studies are most relevant to research and management if they focus on the models and tools that are used in practice. In our studies we chose to focus on SS, which is a widely used integrated-assessment modelling framework, now used for the majority of stock assessments on the West Coast of the United States (REF). In other regions commonly used model frameworks will be different, but no less important. 
 
-When researchers are interested in multiple modelling frameworks they may choose between 
-(1) conducting a study where both the OM and EM are based on the same modelling framework to better understand issues related to model specification or 
-(2) conducting a study where the OM and EM are based on different modelling frameworks to investigate the impact of model-choice uncertainty. 
-Frequently model-choice uncertainty may dwarf other sources of uncertainty (REF).
+When researchers are interested in multiple modelling frameworks they may choose between (1) conducting a study where both the OM and EM are based on the same modelling framework to better understand issues related to model specification or (2) conducting a study where the OM and EM are based on different modelling frameworks to investigate the impact of model-choice uncertainty. Frequently, model-choice uncertainty may dwarf other sources of uncertainty (REF).
 
 
 ## 2. Condition the operating model carefully ##
-The relevance of a stock assessment simulation study depends on the system that the OM is conditioned to reflect. 
-Researchers must choose between specific conditioning, in which the OM might be conditioned for specific species, region, or even stock and (2) generic conditioning in which the OM is conditioned on a general representation of a system. 
-Both types of conditioning have their place in stock assessment simulation but each has its pros and cons.  
-Specific conditioning may result in findings that are relevant to a specific species, region, or stock and may therefore be more likely accepted than generically conditioned models. 
-Generic conditioning, however, may result in findings that are applicable across a wider range of fisheries, but are less applicable to any one stock
+The relevance of a stock assessment simulation study depends on the system that the OM is conditioned to reflect. Researchers must choose between specific conditioning, in which the OM might be conditioned for specific species, region, or even stock and (2) generic conditioning in which the OM is conditioned on a general representation of a system. Both types of conditioning have their place in stock assessment simulation but each has its pros and cons. Specific conditioning may result in findings that are relevant to a specific species, region, or stock and may therefore be more likely accepted than generically conditioned models. Generic conditioning, however, may result in findings that are applicable across a wider range of fisheries, but are less applicable to any one stock.
 
 ## 3. Consider likely or important model misspecifications ##
 Model misspecification refers to a mismatch between the truth (OM) and our assessment of that truth (EM). 
-For example, an OM might specify time-varying M, whereas the EM might assume a constant M. 
-Researchers might deem some forms of model misspecification more likely *a priori* and some types of model misspecification potentially more influential for stock assessment. It is these forms of model misspecification that researchers should focus on first.
+For example, an OM might specify time-varying M, whereas the EM might assume a constant M. Researchers might deem some forms of model misspecification more likely *a priori* and some types of model misspecification potentially more influential for stock assessment. It is these forms of model misspecification that researchers should focus on first.
 
-## 4. Make your framework reproducible and transparent ##
-To produce credible science, it is critical that stock assessment simulation studies are reproducible and transparent. 
-To achieve these properties, simulation study can be written in code as opposed to by clicking on buttons in a graphical user interface (GUI). 
-Further, researchers might consider writing their code in a formal package or library structure (e.g. Anderson et al. 2013 R package). 
-This makes it easier for future users to understand the code and simulation structure and encourages the code authors to document their work. 
-Researchers can introduce further transparency by developing their code in a version control system such as Git, which provides a history of all code modifications (e.g. https://github.com/seananderson/ss3sim). 
-Finally, by controlling model runs through plaintext control files, researchers and other users can easily understand and reproduce the settings that created their simulations.
+## 4. Use a reproducible and transparent framework ##
+To produce credible science, it is critical that stock assessment simulation studies are reproducible and transparent. Simulation studies written in a commonly used and widely supported programming languages are likely to be far more reproducable and accessible than studies conducted by clicking on buttons in a graphical user interface (GUI). Further, researchers might consider writing their code in a formal package or library structure (e.g. Anderson et al. 2013 R package). This makes it easier for future users to understand the code and simulation structure and encourages the code authors to document their work. 
+Researchers can introduce further transparency by developing their code in a version control system such as Git, which provides a history of all code modifications (e.g. https://github.com/seananderson/ss3sim). Finally, by controlling model runs through plaintext control files, researchers and other users can easily understand and reproduce the settings that created their simulations.
 
-## 5. Make your framework flexible ##
-A stock assessments simulation framework is most useful if it is flexible for the current users as well as for future users who may develop scientific questions with the framework that the original users never considered. 
-One way researchers can make their framework flexible is to build their code around smaller functions that can be mixed as needed. 
-Another key element is keeping the input and output files in formats that can be read and process multiple tools (e.g. comma-separated, or tab-delimited text files). 
+## 5. Design a flexible framework ##
+A stock assessments simulation framework is most useful if it is flexible for the current users as well as for future users who may develop scientific questions with the framework that the original users never considered. One way researchers can make their framework flexible is to build their code around smaller functions that can be mixed as needed. Another key element is keeping the input and output files in formats that can be read and process multiple tools (e.g. comma-separated, or tab-delimited text files). 
 Finally, researchers may consider splitting scenarios into different cases so that cases can need mixed and matched into scenarios. 
 For example, a scenario might be comprised of a combination of cases for the M trajectory, F trajectory, and selectivity patterns.  
 If these cases are specified in individual text control files then they can be flexibly combined without duplicating case specification.
 
-## 6. Check your models early and often ##
+## 6. Check and test models early and often ##
 The complexity of conducting stock assessment simulations means that the chance of making mistakes is high, and our ability to make sense of complicated model output can be limited. 
 Deterministic model checking is therefore vital. 
 To check a model deterministically we can reduce or eliminate process and observation error and check for bias between the OM and EM models. 
@@ -128,7 +117,22 @@ keep folder structure as simple as possible; keep all output; write code so the 
 
 # Discussion and conclusions #
 
+We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. These studies are featured in this issue: 
+
+Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. 
+
+If a simulation study should be designed with the three 'Rs' in mind, then its success can me measured by the same criteria. Our studies were relevant: x,y, ; realistic, reproducability. 
+
 - perhaps suggest the kinds of questions that this approach could answer and other steps forward
 - ...?
+
+*Where simulation studies can be most useful*
+
+Recreational fisheries here.
+
+*Recommended next steps*.
+
+Studies on key findings from the conference for example: See notes on this.
+
 
 # References #
