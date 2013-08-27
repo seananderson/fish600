@@ -30,22 +30,28 @@ National Marine Fisheries Service, 7600 Sand Point Way NE, Seattle, WA 98115, US
 
 # Abstract #
 
-Stock assessment simulation studies are critical to evaluating stock assessment methods and understanding their strengths and weaknesses. This paper briefly summarises past stock assessment simulation studies and describes steps necessary to conduct efficient and effective simulations using contemporay fisheries stock assessment methods. This paper also describes key outcomes of a large-scale stock assessment simulation project and discusses important lessons learned from it.
-
-<!-- Start with a general introduction similar to what we've got now. Include a schematic representation of the steps required to conduct a stock assessment simulation. Follow with lessons/rules. Each 'rule' would need some shorter header. Then 1-3 paragraphs per rule. Finish with a brief discussion/conclusion. -->
+Stock assessment simulation studies are critical to evaluating stock assessment methods and understanding their strengths and weaknesses. This paper briefly summarises past stock assessment simulation studies and describes the components and steps necessary to conduct efficient and effective simulations using contemporay fisheries stock assessment methods. This paper also describes key outcomes of a series of large-scale stock assessment simulation studies and outlines important lessons learned from them.
 
 
 # Introduction #
 
 Stock assessment simulation is key to evaluating stock assessment methods and understanding their strengths and weaknesses. Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assessment model assumptions. 
 
+Simulation studies can be very simple, intermediate with a focus on methods (as here) and all the way up to management strategy evaluation tpye studies (with examples). 
+
 <!-- And more with Reference to: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee). -->
 
-In this paper, we outline the necessary components for conducting stock assessment simulations and share simple rules and key lessons learned whilst conducting a series of large-scale and rapid stock assessment simulation studies. The ideas and insights presented herein also come from dicsussions with colleagues and from published articles about stock assessment simulation.
+Modellers need to make assumptions, and these can have consequences for the outputs of stock assessments. <!-- See thesis for text on model assumptions and testing those --> 
+
+As the 'true' dynamics and properties of fish stocks can almost never be known with certainty, simulation modelling is one of the most effective ways to investigate how a fish stock might reposnd to fishing. Hilborn and Walters (REF), suggest that testing via simulation modelling modelling should be prerequsitie for all stock assessment methods before they are applied in practice, but in reality this is rarely the case. Simple models were frequenlty tested by simulation (REFS), but as stock assessment methods have matured, and become increasingly complex, so too have the computational demands and time requirements of simulation studies. With continued improvements in computing power, and the availability of 'off the shelf' <!-- see Maunder and Punt for better words --> stock assessment modelling software, the ability to conduct rapid and effective stock assessment simulation studies ... <!-- Something about constemporary statistical stock assessment (IA) models here, and refs to papers that have started to do this. Show that the models came a long time before the sim studies, and that this needs to change! -->. 
+
+In this paper, we outline the necessary components for conducting stock assessment simulations and share simple rules and key lessons learned whilst conducting a series of large-scale stock assessment simulation studies. 
 
 
 
 # Stock assessment studies in practice #
+
+
 
 <!-- Examples from the literature --> 
 
@@ -69,7 +75,9 @@ Steps 2 to 4 are usually repeated across iterations, adding re-sampled process e
 
 # Simple rules for stock assessment simulation studies #
 
-Stock assessment simulation studies should be conducted with three 'Rs' in mind: relevance, realism, and reproducability. Though relevance will ultimately be determined by whether results and recommendations eminating from a study are are read and cited in future work, it is important than any simulation study ensure relevance to current trends and 
+Stock assessment simulation studies should be conducted with three 'Rs' in mind: *realism*, *relevance*, and *reproducability*. Simulation studies should be realistic, that is, conducted in a manner that is reflective of real fisheries situations, and using methods that are alligned with, or slightly progressive of, current modelling trends. Though it can be tempting to test all possible combinations and permutations of life history dynamics, and to test vastly new methods, it is better to consider population dynamics that fall within the realms of published or observed limits, and to test methods that are widely accepted and in common use. This strategy will ensure your results and contributions are relevant. Though relevance will ultimately be determined by whether results and recommendations eminating from a simulation study are read by your peers and cited in future work, it is important that any simulation study ensure relevance to current trends and the needs of the research community. Finally, simulation studies that are fully reproducable are most likley to have an impact on ... <!-- Something from Paper on Reproducable research here, and a reference to that -->
+
+We offer the following general 'rules' for conducting effective and efficient stock assessment simulation studies:
 
 ## 1. Choose widely-used and current assessment models ##
 Stock assessment simulation studies are most relevant to research and management if they focus on the models and tools that are used in practice. In our studies we chose to focus on SS, which is a widely used integrated-assessment modelling framework, now used for the majority of stock assessments on the West Coast of the United States (REF). In other regions commonly used model frameworks will be different, but no less important. 
@@ -113,7 +121,11 @@ To reduce iterations, a researcher can inspect test runs with an increasing numb
 
 
 ## Other thoughts
-keep folder structure as simple as possible; keep all output; write code so the simulations can be distributed across cores, computers, and researchers
+
+* Keep folder structure as simple as possible; keep all output; write code so the simulations can be distributed across cores, computers, and researchers. Using a remote repository service such as Github (https://github.com) can make collaboration among researchers 
+
+And other findings from published studies. 
+
 
 # Discussion and conclusions #
 
