@@ -35,35 +35,26 @@ Stock assessment simulation studies are critical to evaluating stock assessment 
 
 # Introduction #
 
-Stock assessment simulation is key to evaluating stock assessment methods and understanding their strengths and weaknesses. <!-- Modellers need to make assumptions, and these can have consequences for the outputs of stock assessments. [See thesis for text on model assumptions and testing those] --> Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assessment model assumptions. 
+Stock assessment simulation is key to evaluating stock assessment models and understanding their strengths and weaknesses. Modellers must necessarily make simplifying assumptions about fish stocks and fisheries when constructing and fitting stock assessment models, but the results of stock assessments can critically depend on those assumptions. Simulation is important because it enables modellers to test assessment models on known truths, to examine the consequences of alternative plausible truths, and to match (or mismatch) truths and assumptions. Thus though simulation, stock assessment models and the methods and assumptions that underpin them, can be critiqued, tested, and better understood.
 
-The results of simulation studies should, in principle, permit a general understanding of the behaviour of methods and models under examination, but because results are dependent on 
+The 'true' dynamics and underlying properties of fish stocks can almost never be known. As such, fisheries models and management actions can only truly be tested through direct action and long periods of monitoring and evaluation. Simulation modelling provides means to investigate how stocks might respond to fishing pressure, and how well assessment methods estimate management quantities, without the obvious risks of implementing untested fishing practises or management procedures. Testing by simulation modelling should be prerequsitie for all stock assessment methods before they are applied in practice (Hilborn and Walters, 1987), but this is rarely the case. Simple models were frequenlty tested by simulation in the past <!-- REFS? -->, but as stock assessment methods have become increasingly complex, so too have the computational demands and time requirements of simulation studies. Under these constraints, a proliferation of new stock assessment methods <!-- REFS --> has not been met with equal numbers of simualtion studies to test and critique them. However, with continued improvements in computing power, and the availability of pre-packaged stock assessment modelling software, the ability to conduct rapid and effective stock assessment simulation studies is increasinlgy viable. 
 
-For this reason, simulation studies must be designed and implemented with careful consideration of the desired outcomes. That is, they should address specific questions, and be
+The results of simulation studies should, in principle, permit an understanding of the general behaviour of methods and models under examination. However, the results of simulation studies depend on the structure, assumptions, and chosen parameter values of the model used to generate pseudo-data. For this reason, simulation studies must be designed and implemented with careful consideration of the systems of interest and desired outcomes. That is, they should address specific questions, and match the scale of observation, data availability, and modelling and management methodologies applied to the fishery or types of fisheries of interest.
 
+Stock assessment simulation studies can be simple: testing direct-estimation methods on simulated data sets specific to the method being examined <!-- REFS -->; intermediate: with a focus on methods that estimate multiple parameters and models that describe full population and fishing fleet dynamics; and extensive: through whole-of-system models that describe all components of a fishery, including the implementation of management strategies and harvest controls <!-- REFS on MSE for example -->. <!-- Insert text here about how simulation studies of constemporary statistical stock assessment models have become more comment in recent times, and REFS to papers that have done this. Show that the models came a long time before the sim studies, and so more sim studies, and the methods and a general approach to doing them, are much needed! -->. 
 
-
-<!-- And more with Reference to: @hilborn1992 among others; including recent papers on stock-assessment simulation (@piner2011, @lee2011, Maunder, Piner, Lee). -->
-
-As the 'true' dynamics and properties of fish stocks can almost never be known with certainty, simulation modelling is one of the most effective ways to investigate how a fish stock might reposnd to fishing. Hilborn and Walters (REF), suggest testing via simulation modelling should be prerequsitie for all stock assessment methods before they are applied in practice, but in reality this is rarely the case. Simple models were frequenlty tested by simulation in the past (REFS), but as stock assessment have become increasingly complex, so too have the computational demands and time requirements of simulation studies. With these added constraints, a proliferation of new stock assessment methods (REF) has not been met with equal numbers of simualtion studies to test and critique them. However, with continued improvements in computing power, and the availability of 'off the shelf' <!-- see Maunder and Punt for better words --> stock assessment modelling software, the ability to conduct rapid and effective stock assessment simulation studies is increasinlgy viable. 
-
-Stock assessment simulation studies can be simple: testing direct estimation methods on example or simulated data sets specific to the method being examined (Example REFS); intermediate, with a focus on methods (as here), and all the way up to management strategy evaluation tpye studies (with examples). <!-- Insert text here about how simulation studies of constemporary statistical stock assessment (IA) models have become more comment in recent times, and refs to papers that have done this. Show that the models came a long time before the sim studies, and so sim studies need to catch up! -->. 
-
-In this paper, we review current trends in simulation with contemporary fisheries stock assessment models, outline the necessary components for conducting stock assessment simulations, and share simple rules and key lessons learned whilst conducting a series of large-scale stock assessment simulation studies. 
+In this paper, we review current trends in simulation studies using contemporary fisheries stock assessment models, and outline the necessary components for conducting them. We also devise a series of 'simple rules' and share key lessons learned whilst conducting a series of large-scale simulation studies. These studies were designed to answer questions posed by the organisers of the 2013 World Conference on Stock Assessment Methodology: They were conducted using contemporary methods and software and led to the development of an R package that enables rapid and reproduacble simulation studies using readily-available pre-packaged stock assessment software. The package, together with the rules and lessons presented here, are intended to encourage and enable further research, testing of new stock assessment techniques, and increased scrutiny of commonly-used and sometimes unchallenged existing methods. 
 
 
+# The current state-of-the-art #
 
-# Stock assessment studies in practice #
+<!-- Examples from the literature: Include references to recent papers on stock-assessment simulation such as @piner2011, @lee2011, @maunder. --> 
 
 
 
-<!-- Examples from the literature --> 
+# Key components of stock assessment simulations #
 
-
-
-# Key components of effective simulation studies #
-
-An effective stock assessment simulation requires four key components (Fig. 1):
+An effective stock assessment simulation study requires four key components (Fig. 1):
 
 1. A **conditioning model** is used to ground a stock assessment simulation to some plausible reality. A stock assessment simulation may be conditioned on a specific region and/or fish stock or on some generic representation of a fishery based on published literature, stock assessment reports, or expert opinion.
 
@@ -73,18 +64,18 @@ An effective stock assessment simulation requires four key components (Fig. 1):
 
 4. A stock assessment *estimation model* is fit to the pseudo-data. This determines the ability of the methods of interest to estimate the parameters specified in the operating model, and to assess the scenario or 'status' of the simulated stock.
 
-Steps 2 to 4 are usually repeated across iterations, with added re-sampled process error and observation error for each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluation in that MSE 'closes the loop' — introducing management decision rules about how to act on stock assessment outcomes that affect subsequent realistations of operating model years. Stock assessment simulation on the other hand is intended to examine the mechanics and performance of stock assessment models themselves: it allows modellers to investigate 
+Steps 2 to 4 are usually repeated across iterations, with added re-sampled process error and observation error for each iteration. Blocks of iterations are repeated across multiple scenarios, with each scenario representing some different combination of conditioning, operating, sampling, and estimation models. This process differs from a management strategy evaluations which 'close the loop': such studies explicitly model management decision rules about how to act on stock assessment outcomes that affect subsequent realistations of operating model years. Stock assessment simulation on the other hand is intended to examine the mechanics and performance of stock assessment models themselves: it allows modellers to investigate questions specific to the chosen assessment methodology and to test new methods against well established ones.
 
 
-# Simple rules for stock assessment simulation studies #
+# Simple rules for effective stock assessment simulations #
 
-Stock assessment simulation studies should be conducted with three 'Rs' in mind: *realism*, *relevance*, and *reproducability*. Simulation studies should be realistic, that is, conducted in a manner that is reflective of real fisheries situations, and using methods that are alligned with, or slightly progressive of, current modelling trends. Though it can be tempting to test all possible combinations and permutations of life history dynamics, and to test vastly new methods, it is better to consider population dynamics that fall within the realms of published or observed limits, and to test methods that are widely accepted and in common use. This strategy should help to ensure simulation results are relevant. Though relevance will ultimately be determined by whether results and recommendations eminating from a simulation study are read by an author's peers and cited in future work, it is important that any simulation study ensure relevance to current trends and the needs of the research community. Finally, simulation studies that are fully reproducable are most likley to have an impact on future research ... <!-- Something from paper on Reproducable Research here, and a reference to that -->
+Stock assessment simulation studies should be conducted with three 'Rs' in mind: *realism*, *relevance*, and *reproducability*. Simulation studies should be realistic, that is, conducted in a manner that is reflective of real fisheries situations, and using methods that are alligned with, or slightly progressive of, current modelling trends. Though it can be tempting to test all possible combinations and permutations of life history dynamics, and to test vastly new methods, it is better to consider population dynamics that fall within the realms of published or observed limits, and to test methods that are widely accepted and in common use. This strategy should help to ensure simulation results are relevant. Though relevance will ultimately be determined by whether results and recommendations eminating from a simulation study are read by an author's peers and cited in future work, it is important that simulation studies are relevant to current methodological trends and the needs of the research community. Finally, fully reproducable simulation studies are most likley to affect future research ... <!-- Something from paper on Reproducable Research here, and a reference to that -->
 
-With the three R's as a recurring theme, we offer the following general 'rules' for conducting effective and efficient stock assessment simulation studies:
+With the three R's as a recurring theme, we offer the following 'simple rules' for conducting effective and efficient stock assessment simulation studies:
 
 ## 1. Choose widely-used, contemporary assessment models and methods ##
 
-Stock assessment simulation studies are most relevant to current research and management if they utilise and analyse models and tools that are used in practice. In our studies we chose to focus on SS, which is a widely used integrated-assessment modelling framework, now used for a large number of stock assessments on the west coast of the United States and in the south east of Austrlia. 
+Stock assessment simulation studies are most relevant to current research and management if they utilise and analyse models and tools that are used in practice. In our studies we utilised Stock Synthesis (SS). SS is a widely used integrated-assessment modelling framework, now used for a large number of stock assessments on the west coast of the United States and in the south east of Australia . 
 
 When researchers are interested in multiple modelling frameworks they may choose between (1) conducting a study where both the OM and EM are based on the same modelling framework to better understand issues related to model specification or (2) conducting a study where the OM and EM are based on different modelling frameworks to investigate the impact of model-choice uncertainty. Frequently, model-choice uncertainty may dwarf other sources of uncertainty (REF).
 
@@ -107,48 +98,39 @@ For example, a scenario might be comprised of a combination of cases for the M t
 If these cases are specified in individual text control files then they can be flexibly combined without duplicating case specification.
 
 ## 6. Check and test models early and often ##
-The complexity of conducting stock assessment simulations means that the chance of making mistakes is high, and our ability to make sense of complicated model output can be limited. 
-Deterministic model checking is therefore vital. 
-To check a model deterministically we can reduce or eliminate process and observation error and check for bias between the OM and EM models. 
-This might mean running the stock assessment simulation with minimal stock-recruit deviations and minimal observation error on survey indices.
+The complexity of conducting stock assessment simulations means that the chance of making mistakes is high, and our ability to make sense of complicated model output can be limited. Deterministic model checking is therefore vital. To check a model deterministically we can reduce or eliminate process and observation error and check for bias between the OM and EM models. This might mean running the stock assessment simulation with minimal stock-recruit deviations and minimal observation error on survey indices.
 
-An important component to model checking is graphical model checking. 
-Many complex problems are unlikely to be detected without graphical model checking (REFs, maybe Gelman). 
-To facilitate model checking these graphics should be rapid and easy to produce. 
-We found the visualization packages `manipulator`, `shiny`, and `ggplot2` to be helpful for this purpose.
+An important component to model checking is graphical model checking. Many complex problems are unlikely to be detected without graphical model checking (REFs, maybe Gelman). To facilitate model checking these graphics should be rapid and easy to produce. We found the visualization packages `manipulator`, `shiny`, and `ggplot2` to be helpful for this purpose.
 
 ## 7. Keep simulation runtime minimal ##
-To discover problems with your simulation and to understand how your simulations are performing you need to run them repeatedly under a variety of conditions. 
-In addition to using a fast computer and writing code carefully, you can minimize runtime by reducing the number of scenarios and iterations. 
-To reduce scenarios, a researcher might consider creating a base-case model and investigating deviations from that model instead of a full factorial design. 
-To reduce iterations, a researcher can inspect test runs with an increasing number of iterations to determine the minimum number of iterations for study conclusions to converge.
+To discover problems with your simulation and to understand how your simulations are performing you need to run them repeatedly under a variety of conditions. In addition to using a fast computer and writing code carefully, you can minimize runtime by reducing the number of scenarios and iterations. To reduce scenarios, a researcher might consider creating a base-case model and investigating deviations from that model instead of a full factorial design. To reduce iterations, a researcher can inspect test runs with an increasing number of iterations to determine the minimum number of iterations for study conclusions to converge.
 
 
 ## Other thoughts
 
-* Keep folder structure as simple as possible; keep all output; write code so the simulations can be distributed across cores, computers, and researchers. Using a remote repository service such as Github (https://github.com) can make collaboration among researchers 
+* Keep folder structure as simple as possible; keep all output; write code so the simulations can be distributed across cores, computers, and researchers. Use a remote repository service such as Github (https://github.com) to ease collaboration among researchers and sharing to others.
 
-And other findings from published studies. 
+
+# Applying the paradigm #
+
+<!-- Below is section on lessons we learned after conducting a series of large-scale stock assessment simulation studies. These studies are featured in this issue (hopefully): -->
+
+Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. <!-- ... and found -->.
+
+If a simulation study should be designed with the three 'Rs' in mind, then its success can me measured by the same criteria. Our studies were relevant: <!-- explain --> ; realistic: <!-- explain -->, and reproducable <!-- explain -->. 
 
 
 # Discussion and conclusions #
 
-We've arrived at the lessons we suggest in this paper after conducting a series of large-scale stock assessment simulation studies at the University of Washington. These studies are featured in this issue: 
+*Recap of the paper:
 
-Johnson et al. (2013, this issue) evaluated the ability of Stock Synthesis (SS) to estimate key quantities when a known 'true' natural mortality (M) was age-specific or age-invariant, but time-varying. Stock assessment methods included models with age-invariant pre-specified M, age-invariant estimated M, and age-specific estimated M. Ono et al. (2013, this issue) analysed the ability of SS to estimate management metrics for different life-history types (demersal, long-lived pelagic, and short-lived pelagic) when the same quantity and quality of pseudo-data were used to inform assessment models. They also considered whether the frequency and duration of length- and age-composition data, or catch history, affect the bias or precision of estimates of management quantities for different life-history types. Hurtado Ferro et al. (2013, this issue) investigated factors which lead to retrospective patterns in SCAA models. Specifically, they tested how key biological and modelling factors can induce retrospective patterns for various life history types. They explored the potential effects of catch patterns, as well as model miss-specification from time-varying biological parameters, time-varying selectivity and catchability, and their interactions. In those cases where retrospective patterns were observed, they assessed the utility of including time-varying selectivity in the assessment as a means to correct them. 
+*This approach could the following types of questions (general discussion of the strenghts and weaknesses of this approach, i.e., when is it most suitable).
 
-If a simulation study should be designed with the three 'Rs' in mind, then its success can me measured by the same criteria. Our studies were relevant: x,y, ; realistic, reproducability. 
+Use of 'off the shelf' stock assessment software can be problematic as well as beneficial, such as when legacy methods are not appropriate for the job at hand. Frequent use of legacy methods is common when there is widespread use of packaged fisheries stock assessment software (Martell and Ianelli, 2012). The application of ready-made models fails to question the original assumptions of the conceptual modeller or software programmer, and in effect, only serves to reinforce their original ideas and impressions of fisheries and fish population dynamics (Longhurst, 2010). It is very important that the information and data available to modellers is routinely scrutinised, and that new methods and models are tested and evaluated as data are updated. Simulation studies are key to addressing such problems.
 
-- perhaps suggest the kinds of questions that this approach could answer and other steps forward
-- ...?
+*Benefits or otherwise of using the same modelling system to create the operating and assessment model.
 
-*Where simulation studies can be most useful*
+*Where simulation studies can be most useful: Recreational fisheries or other data limited situations for example.
 
-Recreational fisheries here.
+*Recommended next steps: Following studies on key findings from the conference for example: See notes on this.
 
-*Recommended next steps*.
-
-Studies on key findings from the conference for example: See notes on this.
-
-
-# References #
